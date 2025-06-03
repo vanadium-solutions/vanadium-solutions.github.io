@@ -1,824 +1,282 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-  <meta name="description" content="Vanadium Solutions" />
-  <title>Vanadium Solutions</title>
+  <meta name="description" content="Vanadium Solutions - Bespoke AI Agents for Discerning Clients" />
+  <title>Vanadium Solutions - Bespoke AI Agents</title>
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <style>
-    :root {
-      --primary: #000000; /* Black for text */
-      --primary-dark: #222222;
-      --primary-glow: rgba(191, 167, 106, 0.08);
-      --secondary: #bfa76a; /* Gold */
-      --accent: #bfa76a;
-      --accent-glow: rgba(191, 167, 106, 0.12);
-      --dark: #ffffff; /* White background */
-      --dark-alt: #fafafa;
-      --text: #000000;
-      --text-bright: #000000;
-      --text-dim: #444444;
-      --spacing: clamp(3rem, 5vw, 7rem);
-      --border-radius: 12px;
-      --gold: #bfa76a;
-      --gold-light: #e6d8b9;
-      --shadow: 0 2px 24px 0 rgba(191,167,106,0.08);
-    }
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 var(--primary-glow); }
-      70% { box-shadow: 0 0 0 10px rgba(0, 194, 255, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 194, 255, 0); }
-    }
+  <header class="hero">
+    <div class="hero-content">
+      <div class="container">
+        <img src="tech-icon.png" alt="Vanadium Solutions Abstract Mark" class="hero-logo-mark">
+        <h1>Vanadium Solutions</h1>
+        <p>Bespoke AI Agents, Forged for an Elite Clientele. <br>Absolute Privacy. Unparalleled Performance. No Compromises.</p>
+        <a href="#contact" class="btn btn-gold cta-hero-button">Request Consultation</a>
+      </div>
+    </div>
+  </header>
 
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
-      background: var(--dark);
-      background-image: url('backdrop.jpg');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      min-height: 100vh;
-    }
-    /* Overlay removed for a clean, exclusive look */
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      position: relative;
-      background: none;
-      border-radius: 0;
-      box-shadow: none;
-    }
-    
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 1.25rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .container {
-        padding: 0 1rem;
-      }
-    }
-
-    header, section, footer {
-      padding: var(--spacing) 0;
-      position: relative;
-    }
-
-    section {
-      position: relative;
-    }
-
-    .content-window {
-      background: #fff;
-      border-radius: var(--border-radius);
-      box-shadow: 0 2px 24px 0 rgba(191,167,106,0.08);
-      border: 1.5px solid var(--gold-light);
-      padding: 2.5rem 2rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .category-btn:hover {
-      background: rgba(0, 194, 255, 0.1);
-      border-color: var(--primary);
-    }
-    
-    .category-btn.active, .category-btn:hover {
-      background: var(--gold);
-      color: var(--primary);
-      box-shadow: 0 2px 12px 0 rgba(191,167,106,0.14);
-      border: 1.5px solid var(--gold);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      transition: all 0.2s cubic-bezier(.4,0,.2,1);
-    }
-    
-    .carousel-cards {
-      position: relative;
-      min-height: 300px;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.9; transform: scale(1.1); }
-      50% { opacity: 0.6; transform: scale(1.05); }
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      text-shadow: 0 2px 12px rgba(191, 167, 106, 0.08);
-      background: none;
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .cta-button {
-      background: transparent;
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: var(--border-radius);
-      transition: all 0.3s ease;
-      border: 2px solid var(--primary);
-      position: relative;
-      overflow: hidden;
-      font-family: 'Roboto Mono', monospace;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      z-index: 1;
-    }
-
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--primary);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
-      z-index: -1;
-    }
-
-    .cta-button {
-      position: relative;
-      z-index: 3;
-      pointer-events: auto;
-    }
-
-    .cta-button:hover {
-      color: var(--dark);
-      box-shadow: 0 0 15px var(--primary-glow);
-    }
-
-    .cta-button:hover::before {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 1.2rem 0 0.8rem 0; /* even less vertical padding */
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: 
-        url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(0,194,255,0.05)"/></svg>');
-      opacity: 0.3;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200px;
-      background: linear-gradient(to bottom, transparent, rgba(10, 14, 23, 0.3));
-      z-index: 1;
-    }
-
-    .hero h1,
-    .hero p {
-      color: var(--text-bright);
-      position: relative;
-      z-index: 2;
-    }
-    
-    .hero-content {
-      width: 100%;
-      margin: 0 auto;
-      padding: 0.5rem 0 0.3rem 0; /* even less vertical padding */
-      text-align: center;
-      position: relative;
-      z-index: 1; /* Ensure content is above circuit lines */
-      background: none;
-    }
-
-    .hero h1 {
-      text-shadow: 0 0 10px rgba(0, 194, 255, 0.5);
-    }
-
-    /* All buttons use the same styling */
-    /* ... */
-    /* Navigation styles */
-    .main-nav {
-      width: 100%;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 2px solid var(--gold);
-      box-shadow: 0 2px 12px 0 rgba(191,167,106,0.03);
-      position: relative;
-      z-index: 10;
-    }
-    .main-nav ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      margin: 0;
-      padding: 0.5rem 0;
-      gap: 2.5rem;
-    }
-    .main-nav li {
-      display: inline-block;
-    }
-    .main-nav a {
-      display: block;
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 600;
-      font-size: 1.08rem;
-      text-decoration: none;
-      color: var(--primary);
-      padding: 0.5rem 1.2rem;
-      border-radius: 24px;
-      transition: background 0.18s, color 0.18s;
-    }
-    .main-nav a:hover, .main-nav a.active {
-      background: var(--gold);
-      color: #fff;
-      text-shadow: 0 1px 8px rgba(191,167,106,0.12);
-    }
-    @media (max-width: 700px) {
-      .main-nav ul {
-        gap: 1.1rem;
-      }
-      .main-nav a {
-        font-size: 0.97rem;
-        padding: 0.5rem 0.6rem;
-      }
-    }
-    @media (max-width: 480px) {
-      .main-nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .main-nav {
-        padding-bottom: 0.5rem;
-      }
-    }
-    /* Carousel-style main section container */
-    .main-sections {
-      position: relative;
-      width: 100%;
-      min-height: 60vh;
-      /* overflow: hidden; removed to allow full section height */
-    }
-    .main-section {
-      position: absolute;
-      top: 0;
-      left: 100%;
-      width: 100%;
-      opacity: 0;
-      transition: left 0.6s cubic-bezier(.63,.01,.36,1), opacity 0.4s;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .main-section.active {
-      position: relative; /* allow active section to expand naturally */
-      left: 0;
-      opacity: 1;
-      z-index: 2;
-      pointer-events: auto;
-      transition: left 0.6s cubic-bezier(.63,.01,.36,1), opacity 0.4s;
-    }
-    .main-section.slide-left {
-      left: -100%;
-      opacity: 0;
-      z-index: 1;
-    }
-    .main-section.slide-right {
-      left: 100%;
-      opacity: 0;
-      z-index: 1;
-    }
-    @media (max-width: 700px) {
-      .main-sections { min-height: 80vh; }
-    }
-    .main-nav a.active {
-      background: var(--gold);
-      color: #fff;
-      text-shadow: 0 1px 8px rgba(191,167,106,0.12);
-    }
-.carousel-container {
-  margin: 2rem 0 0 0;
-  padding: 2rem 1rem;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 24px 0 rgba(191,167,106,0.08);
-}
-
-.carousel-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-}
-
-.category-btn {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 1.5px solid var(--gold);
-  background: #faf8f3;
-  color: var(--primary);
-  border-radius: 24px;
-  padding: 0.5rem 1.2rem;
-  cursor: pointer;
-  transition: all 0.18s;
-}
-
-.category-btn.active, .category-btn:hover {
-  background: var(--gold);
-  color: #fff;
-  border-color: var(--gold);
-  box-shadow: 0 2px 12px 0 rgba(191,167,106,0.14);
-}
-
-.carousel-cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.carousel-card {
-  display: none;
-  width: 100%;
-  max-width: 480px;
-  margin: 0 auto 2rem auto;
-  background: #fff;
-  border-radius: 12px;
-  border: 1.5px solid var(--gold-light);
-  box-shadow: 0 2px 12px 0 rgba(191,167,106,0.06);
-  padding: 2rem 1.5rem;
-  transition: box-shadow 0.18s;
-}
-
-.carousel-card.active {
-  display: block;
-}
-
-.card-header {
-  font-weight: bold;
-  font-size: 1.12rem;
-  color: var(--gold);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .carousel-card {
-    padding: 1.2rem 0.7rem;
-  }
-}
-
-.contact-form {
-  background: #fff !important;
-  border-radius: 18px !important;
-  border: 2.5px solid var(--gold-light) !important;
-  box-shadow: 0 4px 32px 0 rgba(191,167,106,0.12) !important;
-  padding: 2.7rem 2.2rem !important;
-  max-width: 1080px !important;
-  margin: 3rem auto 0 auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 1.5rem !important;
-  align-items: center !important;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 90% !important;
-  max-width: 900px !important;
-  min-width: 320px !important;
-  box-sizing: border-box !important;
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-@media (max-width: 900px) {
-  .container {
-    padding: 0 0.5rem !important;
-  }
-  .content-window {
-    padding: 1.2rem 0.5rem !important;
-  }
-  .contact-form {
-    max-width: 98vw !important;
-    padding: 1.2rem 0.5rem !important;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    width: 98vw !important;
-    max-width: 98vw !important;
-    font-size: 1.1rem !important;
-    padding: 1rem 0.7rem !important;
-    height: 3rem !important;
-  }
-  .contact-gold-bar {
-    font-size: 1.1rem !important;
-    padding: 1rem 0 !important;
-    min-height: 2.7rem !important;
-  }
-}
-@media (max-width: 600px) {
-  .main-nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .main-nav {
-    padding-bottom: 0.5rem;
-  }
-  .container,
-  .content-window,
-  .contact-form {
-    padding-left: 0.2rem !important;
-    padding-right: 0.2rem !important;
-  }
-  .contact-form input,
-  .contact-form textarea {
-    width: 99vw !important;
-    max-width: 99vw !important;
-    font-size: 1rem !important;
-    padding: 0.9rem 0.4rem !important;
-    height: 2.5rem !important;
-  }
-  .contact-gold-bar {
-    font-size: 1rem !important;
-    padding: 0.8rem 0 !important;
-    min-height: 2.2rem !important;
-  }
-  section, header, footer {
-    padding: 1.2rem 0 !important;
-  }
-}
-
-</style>
-<script>
-(function() {
-  function showCategory(category) {
-    document.querySelectorAll('.carousel-card').forEach(function(card) {
-      card.classList.toggle('active', card.dataset.category === category);
-    });
-    document.querySelectorAll('.category-btn').forEach(function(btn) {
-      btn.classList.toggle('active', btn.dataset.category === category);
-    });
-  }
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.category-btn');
-    if (btn) {
-      showCategory(btn.dataset.category);
-    }
-  });
-  function ensureShowcaseActive() {
-    var showcaseSection = document.getElementById('showcase');
-    if (showcaseSection && showcaseSection.classList.contains('active')) {
-      var activeBtn = document.querySelector('.carousel-categories .category-btn.active');
-      var category = activeBtn ? activeBtn.dataset.category : 'communication';
-      showCategory(category);
-    }
-  }
-  window.addEventListener('hashchange', ensureShowcaseActive);
-  document.addEventListener('DOMContentLoaded', ensureShowcaseActive);
-})();
-</script>
-<script>
-// Carousel section navigation
-window.addEventListener('DOMContentLoaded', function () {
-  const navLinks = document.querySelectorAll('.main-nav a');
-  const sectionIds = ['vanadium', 'ai-agents', 'privacy', 'showcase', 'membership', 'contact'];
-  const sections = sectionIds.map(id => document.getElementById(id));
-  let currentIdx = 0;
-
-  window.showSection = function(idx, direction) {
-    sections.forEach((sec, i) => {
-      sec.classList.remove('active', 'slide-left', 'slide-right');
-      sec.style.display = 'block';
-      if (i === idx) {
-        sec.classList.add('active');
-      } else if (i < idx) {
-        sec.classList.add('slide-left');
-      } else {
-        sec.classList.add('slide-right');
-      }
-    });
-    navLinks.forEach((link, i) => {
-      link.classList.toggle('active', i === idx);
-    });
-    currentIdx = idx;
-  }
-
-  navLinks.forEach((link, idx) => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (idx === currentIdx) return;
-      showSection(idx, idx > currentIdx ? 'right' : 'left');
-      history.replaceState(null, '', '#' + sectionIds[idx]);
-    });
-  });
-
-  // On load, show section based on hash or first
-  let initialIdx = 0;
-  if (location.hash) {
-    const hash = location.hash.replace('#', '');
-    const idx = sectionIds.indexOf(hash);
-    if (idx >= 0) initialIdx = idx;
-  }
-  showSection(initialIdx);
-});
-</script>
-<!-- ... -->
-<header class="hero">
   <nav class="main-nav">
-    <ul>
-      <li><a href="#vanadium">Vanadium</a></li>
-      <li><a href="#ai-agents">AI Agents</a></li>
-      <li><a href="#privacy">Privacy</a></li>
-      <li><a href="#showcase">Showcase</a></li>
-      <li><a href="#membership">Membership</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="container">
+      <ul>
+        <li><a href="#vanadium">Vanadium</a></li> <!-- JS will add .active -->
+        <li><a href="#ai-agents">AI Agents</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#showcase">Showcase</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#membership">Membership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
-  <div class="circuit-container" style="pointer-events: none;">
-    <div class="circuit-line" style="top: 20%; animation-delay: 0s; pointer-events: none;"></div>
-    <div class="circuit-line" style="top: 40%; animation-delay: 2s; pointer-events: none;"></div>
-    <div class="circuit-line" style="top: 60%; animation-delay: 4s; pointer-events: none;"></div>
-    <div class="circuit-line" style="top: 80%; animation-delay: 6s; pointer-events: none;"></div>
-  </div>
-  <div class="hero-content">
-    <div class="container">
-      <h1><span class="tech-icon"><img src="tech-icon.png" alt="V" style="width: 128px; height: 128px;">
-        <br>
-      </span>Vanadium Solutions</h1>
-      <p style="margin: 0 auto 1.5rem; max-width: 800px;">We build, deploy, and manage fully private AI systems. No cloud. No data sharing. No compromises.</p>
-      <p style="margin: 0 auto 1.5rem; max-width: 800px;">Privacy is freedom.</p>
 
-<script>
-(function() {
-
-})();
-</script>
-    </div>
-  </div>
-</header>
-<div class="main-sections">
-  <section id="vanadium" class="main-section active">
-    <div class="container">
-      <div class="content-window">
-        <h2><span class="tech-icon"><i class="fas fa-robot"></i></span>Your Own Team of AI Agents.</h2>
-        <p>Vanadium delivers custom AI solutions that work for you — privately, securely, and personally.</p>
-        <ul>
-          <li>A personal assistant that you can trust with anything</li>
-          <li>A 24/7 team to automate your operations</li>
-          <li>A second brain — that keeps your secrets safe</li>
-          <li>Fully private. Fully yours.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="ai-agents" class="main-section">
-    <div class="container">
-      <div class="content-window">
-        <h2><span class="tech-icon"><i class="fas fa-robot"></i></span>AI Agents</h2>
-        <p>Our AI agents are designed to automate, optimize, and protect your digital life.</p>
-        <ul>
-          <li>Custom AI system design and deployment</li>
-          <li>Ongoing maintenance and upgrades</li>
-          <li>24/7 direct access to your engineering team</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="privacy" class="main-section">
-    <div class="container">
-      <div class="content-window">
-        <h2><span class="tech-icon"><i class="fas fa-lock"></i></span>Your Data Never Leaves Your Hands</h2>
-        <p>Everything we build runs inside your own secure environment. No external servers. No data brokers. No compromises. We specialize in clients where privacy and control are critical.</p>
-        <p>Remember: the cloud is just someone else's computer. </p>
-      </div>
-    </div>
-  </section>
-  <section id="showcase" class="main-section">
-    <div class="container">
-      <div class="content-window">
-        <h2><span class="tech-icon"><i class="fas fa-microchip"></i></span>What Can AI Do for You?</h2>
-<p>Here are just a few examples of what Vanadium Solutions can automate and optimize for you, using state of the art AI agents:</p>
-<div class="carousel-container">
-  <div class="carousel-categories">
-    <button class="category-btn active" data-category="communication">💬 Communication</button>
-    <button class="category-btn" data-category="business">📊 Business Intelligence</button>
-    <button class="category-btn" data-category="estate">🏠 Smart Estate</button>
-    <button class="category-btn" data-category="productivity">✓ Productivity</button>
-    <button class="category-btn" data-category="lifestyle">❤️ Lifestyle</button>
-    <button class="category-btn" data-category="military">🔐 Military/Gov</button>
-    <button class="category-btn" data-category="pharma">🧬 Pharma/Biotech</button>
-    <button class="category-btn" data-category="crypto">🪙 Crypto/Finance</button>
-    <button class="category-btn" data-category="executive">🏢 Executive/UHNWI</button>
-  </div>
-  <div class="carousel-cards">
-    <div class="carousel-card active" data-category="communication">
-      <div class="card-header"><i class="fas fa-envelope"></i> Communication</div>
-      <ul>
-        <li>AI secretary that summarizes your inbox daily</li>
-        <li>Automated calendar management and scheduling</li>
-        <li>Smart email prioritization and response drafting</li>
-        <li>Secure voice chatbots for team operations</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="business">
-      <div class="card-header"><i class="fas fa-chart-line"></i> Business Intelligence</div>
-      <ul>
-        <li>Investor briefings generated from financial feeds</li>
-        <li>Custom market intelligence from 100+ sources</li>
-        <li>Executive report generators for stakeholders</li>
-        <li>Competitive analysis and trend forecasting</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="estate">
-      <div class="card-header"><i class="fas fa-home"></i> Smart Estate</div>
-      <ul>
-        <li>Voice-activated secure estate control systems</li>
-        <li>Advanced security monitoring and alerts</li>
-        <li>Energy optimization and sustainability tracking</li>
-        <li>Private smart home integration without cloud</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="productivity">
-      <div class="card-header"><i class="fas fa-tasks"></i> Productivity</div>
-      <ul>
-        <li>AI-driven task manager for workflows and tools</li>
-        <li>Daily family schedule planning and coordination</li>
-        <li>Document analysis and summarization</li>
-        <li>Meeting transcription and action item extraction</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="lifestyle">
-      <div class="card-header"><i class="fas fa-heartbeat"></i> Lifestyle</div>
-      <ul>
-        <li>Health and biofeedback monitoring with reports</li>
-        <li>Luxury travel and logistics concierge AI</li>
-        <li>Personalized nutrition and fitness planning</li>
-        <li>Private media curation and recommendations</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="military">
-      <div class="card-header"><i class="fas fa-shield-alt"></i> 🔐 Military / Government</div>
-      <ul>
-        <li>Secure Field Ops Comms Assistant</li>
-        <li>Threat Feed Aggregator & Analyzer</li>
-        <li>Air-Gapped AI Briefing Generator</li>
-        <li>Counter-Drone Monitoring Dashboard</li>
-        <li>24/7 Tactical Decision Aid</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="pharma">
-      <div class="card-header"><i class="fas fa-dna"></i> 🧬 Pharma / Biotech</div>
-      <ul>
-        <li>Regulatory Compliance Watchdog</li>
-        <li>Clinical Trial Automation Monitor</li>
-        <li>Secure LLM for Drug Discovery Chat</li>
-        <li>Patient Voice Diary Analyzer</li>
-        <li>Preclinical Risk Analysis Copilot</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="crypto">
-      <div class="card-header"><i class="fas fa-coins"></i> 🪙 Crypto / Finance</div>
-      <ul>
-        <li>On-Chain Intelligence Digest</li>
-        <li>Private Portfolio AI Manager</li>
-        <li>Compliance + AML Automator</li>
-        <li>Whale Wallet Watcher</li>
-        <li>Custom Token Governance Assistant</li>
-      </ul>
-    </div>
-    <div class="carousel-card" data-category="executive">
-      <div class="card-header"><i class="fas fa-crown"></i> 🏢 Executive / UHNWI</div>
-      <ul>
-        <li>AI Butler for Estate Operations</li>
-        <li>Confidential Dealflow AI Assistant</li>
-        <li>Family Travel & Visa Concierge</li>
-        <li>High-Risk Region Monitoring</li>
-        <li>Luxury Asset Watchdog</li>
-      </ul>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-  </section>
-  <section id="membership" class="main-section">
-    <div class="container">
-      <div class="content-window">
-        <!-- <h2> -->
-          <span class="tech-icon"><i class="fas fa-user-shield"></i>
-        <!-- </span>Selected Clients & Membership</h2> -->
-        <h2>Membership</h2>
-        <p>Vanadium Solutions works with a limited number of discerning clients to achieve the highest quality and best support</p>
-        <!-- <ul>
-          <li>High-net-worth individuals and estates</li>
-          <li>Intelligence and military organizations</li>
-          <li>Executive boards and private offices</li>
-          <li>Investors and family funds</li>
-        </ul> -->
-        <p>Our services are available on a membership basis. Membership includes:</p>
-        <ul>
-          <li>Private consultation and strategy development</li>
-          <li>Custom AI system design and deployment</li>
-          <li>Ongoing maintenance and upgrades</li>
-          <li>24/7 direct access to your engineering team</li>
-          <li>Quarterly in-person review and planning sessions</li>
-          <li>Complete discretion and confidentiality</li>
-        </ul>
-        <p>Membership is available on a monthly or annual basis. Please contact us for more information.</p>
-      </div>
-    </div>
-  </section>
-  <section id="contact" class="main-section">
-    <div class="container">
-      <div class="content-window">
-
-        <h2>Contact</h2>
-        <p>We meet by referral or invitation only. Enter your referral code below and we will contact you.</p>
-        <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="5b7c8a39-6841-48ee-a123-0021400dab75">
-          <div class="form-group">
-            <input type="text" id="name" name="name" required placeholder="Your Name" autocomplete="name">
+  <div class="main-sections-wrapper"> 
+    <div class="main-sections">
+      
+      <section id="vanadium" class="main-section"> <!-- JS will add .active -->
+        <div class="container">
+          <div class="content-window">
+            <h2><span class="section-icon"><i class="fas fa-gem"></i></span>Vanadium: The Essence of Private AI</h2>
+            <img src="image01.png" alt="Time reclaimed through AI automation" class="content-image float-right">
+            <p><b>Vanadium Solutions</b> crafts bespoke artificial intelligence systems that operate exclusively within your domain. 
+            <p>We deliver not just AI, but digital sovereignty – powerful, intuitive, and entirely yours. Our AI agents are meticulously engineered to integrate seamlessly into your world, automating complexities, amplifying capabilities, and safeguarding your digital autonomy.</p>
+            <br>
+            <ul>
+              <li>A Personal AI confidant, strategist, and 24/7 assistant you can trust implicitly.</li>
+              <li>Automated operational command for your ventures, estate, and complex logistics.</li>
+              <li>An extension of your intellect, secured with uncompromising, on-premise privacy.</li>
+              <li>Custom AI system architecture, development, and white-glove deployment.</li>
+              <li>Proactive system maintenance, evolution, and dedicated engineering support.</li>
+              <li>Designed for those who value discretion as much as performance.</li>
+            </ul>
+            <p>Experience the confluence of ultimate control and intelligent automation. This is AI, redefined for you.</p>
           </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" required placeholder="Your Email" autocomplete="email">
-          </div>
-          <div class="form-group">
-            <input type="text" id="referral" name="referral" required placeholder="Referral Code" autocomplete="off">
-          </div>
-          <div class="form-group">
-            <textarea id="message" name="message" rows="4" required placeholder="How can we help you?" autocomplete="off"></textarea>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="contact-gold-bar">
-              <span class="button-text">Send Secure Message</span>
-              <span class="button-spinner" style="display: none;">Sending...</span>
-            </button>
-          </div>
-          <div id="formStatus" class="form-status"></div>
-        </form>
-        <div id="successMessage" class="success-message" style="display: none;">
-          <p>Your message has been sent securely. We'll be in touch soon.</p>
         </div>
-      </div>
+      </section>
+
+    
+       
+<section id="ai-agents" class="main-section">
+  <div class="container">
+    <div class="content-window">
+      <h2><span class="section-icon"><i class="fas fa-brain"></i></span>Reclaim Your Most Precious Asset: Time</h2>
+      <img src="image.png" alt="Time reclaimed through AI automation" class="content-image float-right">
+      <p>In a world of ceaseless demands, the ultimate luxury isn't material – it's <strong class="highlight-gold">time</strong>. Imagine an intelligence devoted entirely to you, a silent partner anticipating needs, streamlining complexities, and executing mundane tasks with flawless precision, 24/7. This is the promise of Vanadium AI Agents.</p>
+      <p>Our bespoke AI-driven automations are more than just sophisticated software; they are an extension of your will, designed to liberate you from the operational drag that dilutes focus and consumes your most valuable resource. From orchestrating intricate global schedules to managing vast information flows and safeguarding your digital footprint, our agents work tirelessly in the background, granting you the freedom to dedicate your energy to what truly matters: strategic vision, personal passions, and irreplaceable moments.</p>
+      <p>This isn't just about efficiency; it's about enhancing the very fabric of your life. It's about regaining control, achieving a new level of clarity, and unlocking capacities you never thought possible. <span class="text-emphasis">Welcome to a life amplified by intelligent automation, secured by Vanadium.</span></p>
     </div>
-  </section>
-</div>
+  </div>
+</section>
+
+
+<section id="privacy" class="main-section">
+  <div class="container">
+    <div class="content-window">
+      <h2><span class="section-icon"><i class="fas fa-user-secret"></i></span>Digital Sovereignty: Your Data, Your Domain</h2>
+      <img src="image03.png" alt="Time reclaimed through AI automation" class="content-image float-right">
+      <p class="section-intro">In an era of pervasive data harvesting and opaque algorithms, Vanadium Solutions stands apart. For our clientele, privacy is not a preference—it is a prerequisite. We believe true digital autonomy is achieved only when your most sensitive information and intelligent systems reside entirely under your control.</p>
+      
+      <h3 class="subsection-title"><i class="fas fa-shield-alt icon-bullet"></i>The Vanadium Privacy Mandate</h3>
+      <p>Our approach to privacy is uncompromising and architected from the ground up. We engineer AI solutions that operate exclusively within your designated secure perimeter. This means:</p>
+      <ul>
+        <li><strong>No Third-Party Clouds:</strong> Your AI models, proprietary data, and operational logs are never hosted on external servers. The phrase "the cloud is just someone else's computer" is a core tenet of our design philosophy.</li>
+        <li><strong>Zero Data Sharing or Brokerage:</strong> We do not, under any circumstances, share, sell, or allow access to your data by any third party. Your information remains unequivocally yours.</li>
+        <li><strong>On-Premise or Private Infrastructure Deployment:</strong> Systems are deployed on hardware you own and control, or within a private, isolated cloud environment that you exclusively manage.</li>
+        <li><strong>End-to-End Encryption & Secure Protocols:</strong> All internal communications and data storage utilize robust, state-of-the-art encryption and security measures, audited and verified.</li>
+        <li><strong>Minimized Attack Surface:</strong> By eliminating external dependencies and cloud vulnerabilities, we drastically reduce the potential vectors for unauthorized access or data breaches.</li>
+      </ul>
+
+      <h3 class="subsection-title"><i class="fas fa-fingerprint icon-bullet"></i>Beyond Compliance: True Confidentiality</h3>
+      <p>Standard data protection regulations are merely a baseline. Vanadium aims higher, providing a level of confidentiality that instills absolute confidence. Our systems are built for individuals and organizations where the stakes are highest—where intellectual property, strategic plans, personal security, and financial data demand more than just regulatory adherence; they demand genuine sanctuary.</p>
+      <p>Choosing Vanadium means investing in more than an AI agent; it's an investment in your digital independence and the enduring security of your most valuable assets. We provide the tools for you to operate with unparalleled intelligence, without sacrificing an iota of control or confidentiality.</p>
+    </div>
+  </div>
+</section>
+
+
+      <section id="showcase" class="main-section">
+        <div class="container">
+          <div class="content-window">
+            <h2><span class="section-icon"><i class="fas fa-microchip"></i></span>Illustrative Capabilities</h2>
+            <p>Discover a glimpse of the potential Vanadium Solutions can unlock for you. These are but a few examples of how our bespoke AI agents can automate, optimize, and enhance your endeavors:</p>
+            <div class="showcase-carousel-container">
+              <div class="carousel-categories">
+                <button class="category-btn btn btn-subtle active" data-category="communication">
+                  <i class="fas fa-headset"></i> Communication
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="business">
+                  <i class="fas fa-chart-pie"></i> Business Intel
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="estate">
+                  <i class="fas fa-city"></i> Smart Estate
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="productivity">
+                  <i class="fas fa-cogs"></i> Productivity
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="lifestyle">
+                  <i class="fas fa-spa"></i> Lifestyle
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="military">
+                  <i class="fas fa-shield-alt"></i> Security/Gov
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="pharma">
+                  <i class="fas fa-microscope"></i> Pharma/Biotech
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="crypto">
+                  <i class="fas fa-link"></i> Crypto/Finance
+                </button>
+                <button class="category-btn btn btn-subtle" data-category="executive">
+                  <i class="fas fa-user-tie"></i> Executive/UHNWI
+                </button>
+              </div>
+              <div class="carousel-cards">
+                <div class="carousel-card active" data-category="communication">
+                  <div class="card-header"><i class="fas fa-envelope"></i> Communication Nexus</div>
+                  <ul><li>AI-powered executive secretary for daily inbox intelligence and summarization.</li><li>Autonomous calendar orchestration and secure meeting facilitation.</li><li>Intelligent email prioritization, drafting, and sentiment analysis.</li><li>Encrypted voice-activated chatbots for private team operations and commands.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="business">
+                  <div class="card-header"><i class="fas fa-chart-line"></i> Strategic Intelligence Suite</div>
+                  <ul><li>Automated investor briefings synthesized from proprietary financial data streams.</li><li>Custom-curated market intelligence from over a thousand global sources.</li><li>Dynamic executive report generation for stakeholders and board members.</li><li>Predictive competitive analysis and emerging trend forecasting.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="estate">
+                  <div class="card-header"><i class="fas fa-home-lg-alt"></i> Sentient Estate Management</div>
+                  <ul><li>Voice-commanded, encrypted estate control systems for unparalleled convenience.</li><li>Advanced anomaly detection and proactive security alerts for total peace of mind.</li><li>Intelligent energy optimization and sustainability performance tracking.</li><li>Private smart home ecosystem integration, free from cloud vulnerabilities.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="productivity">
+                  <div class="card-header"><i class="fas fa-tasks-alt"></i> Peak Productivity Engine</div>
+                  <ul><li>AI-driven workflow automation across your preferred tools and platforms.</li><li>Personalized family and household schedule planning and dynamic coordination.</li><li>Rapid document analysis, knowledge extraction, and summarization.</li><li>Automated meeting transcription, minutes generation, and action item tracking.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="lifestyle">
+                  <div class="card-header"><i class="fas fa-heart-pulse"></i> Curated Lifestyle AI</div>
+                  <ul><li>Continuous health and biofeedback monitoring with personalized insights and reports.</li><li>Bespoke luxury travel, logistics, and experience concierge AI.</li><li>AI-crafted nutrition, fitness, and wellness regimens tailored to your unique profile.</li><li>Private media library curation, discovery, and personalized recommendations.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="military">
+                  <div class="card-header"><i class="fas fa-shield-alt"></i> Mission Critical Command AI</div>
+                  <ul><li>Secure, air-gapped field operations communications assistant.</li><li>Real-time global threat feed aggregator, correlator, and analyzer.</li><li>Automated AI briefing generator for sensitive intelligence.</li><li>Autonomous counter- UAS/drone monitoring and alert dashboard.</li><li>24/7 tactical decision support and predictive modeling aid.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="pharma">
+                  <div class="card-header"><i class="fas fa-dna"></i> BioPharma Advancement AI</div>
+                  <ul><li>Proactive regulatory compliance sentinel and documentation auditor.</li><li>Automated clinical trial monitoring and anomaly detection system.</li><li>Secure, proprietary LLM for confidential drug discovery and research chat.</li><li>Longitudinal patient voice diary analysis for nuanced outcome tracking.</li><li>Preclinical risk analysis and mitigation copilot.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="crypto">
+                  <div class="card-header"><i class="fas fa-coins"></i> Digital Asset & DeFi AI</div>
+                  <ul><li>On-chain intelligence aggregator providing actionable alpha and risk alerts.</li><li>Private, AI-driven portfolio manager with customizable strategies.</li><li>Automated compliance, AML, and regulatory reporting assistant.</li><li>Sophisticated whale wallet movement tracker and market sentiment analyzer.</li><li>Custom tokenomics modeling and DAO governance participation assistant.</li></ul>
+                </div>
+                <div class="carousel-card" data-category="executive">
+                  <div class="card-header"><i class="fas fa-chess-king"></i> Executive & UHNWI Command Center</div>
+                  <ul><li>AI Butler for intelligent estate operations and staff coordination.</li><li>Confidential deal flow analysis and due diligence AI assistant.</li><li>Global family travel, visa, and complex logistics concierge AI.</li><li>Proactive high-risk region monitoring and personal security advisor.</li><li>Automated luxury asset management, maintenance, and watchdog.</li></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- /* testimonials -->
+
+      <section id="testimonials" class="main-section">
+        <div class="container">
+          <div class="content-window">
+            <h2><span class="section-icon"><i class="fas fa-comments-dollar"></i></span>Discreet Acclaim: Voices of Vanadium</h2>
+            <p class="testimonials-intro">While our clients value utmost privacy, their experiences underscore the transformative power of bespoke AI, securely managed.</p>
+            
+            <div class="testimonial-grid">
+              <div class="testimonial-card">
+                <blockquote>
+                  <p>"Vanadium's AI doesn't just manage my schedule; it anticipates my needs across three continents and a dozen ventures. The time reclaimed is invaluable. And the privacy? Non-negotiable and perfectly delivered."</p>
+                </blockquote>
+                <cite>– A Sovereign Wealth Advisor & UHNWI</cite>
+              </div>
+
+              <div class="testimonial-card">
+                <blockquote>
+                  <p>"My digital life, my family's, my estate's – it's complex. Vanadium built an AI that's not just a tool, but a trusted extension of my own diligence. Knowing my data never leaves my control is paramount."</p>
+                </blockquote>
+                <cite>– Founder, Private Equity & Family Office</cite>
+              </div>
+
+              <div class="testimonial-card">
+                <blockquote>
+                  <p>"In the crypto space, information is alpha, and security is everything. My custom Vanadium agent sifts through terabytes of on-chain data, providing insights no public tool could, all within my air-gapped environment. It's a distinct competitive edge."</p>
+                </blockquote>
+                <cite>– Early Crypto Adopter & DeFi Architect</cite>
+              </div>
+
+              <div class="testimonial-card">
+                <blockquote>
+                  <p>"The level of automation for estate operations and personal logistics is astounding. Mundane tasks that consumed hours are now handled seamlessly. This isn't just convenience; it's a higher quality of life, backed by true digital sovereignty."</p>
+                </blockquote>
+                <cite>– Tech Entrepreneur & Philanthropist</cite>
+              </div>
+
+              <!-- NEW TESTIMONIAL 1 -->
+              <div class="testimonial-card">
+                <blockquote>
+                  <p>"As a collector of unique digital and physical assets, tracking provenance, security, and market shifts is a full-time job. Vanadium's AI acts as my tireless, incorruptible curator and sentinel, providing instant alerts and deep analysis. It's revolutionized how I manage my portfolio."</p>
+                </blockquote>
+                <cite>– Discerning Collector & Art Aficionado</cite>
+              </div>
+
+              <!-- NEW TESTIMONIAL 2 -->
+              <div class="testimonial-card">
+                <blockquote>
+                  <p>"The ability to have a secure, private LLM trained on *my* proprietary research and internal documents has accelerated our biotech R&D significantly. We can ask complex questions and get nuanced answers without any data leaving our secure perimeter. Game-changing."</p>
+                </blockquote>
+                <cite>– Chief Scientific Officer, Boutique Biotech Firm</cite>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+     
+      <section id="membership" class="main-section">
+        <div class="container">
+          <div class="content-window">
+            <h2><span class="section-icon"><i class="fas fa-user-shield"></i></span>Exclusive Membership</h2>
+            <img src="image02.png" alt="Time reclaimed through AI automation" class="content-image float-left">
+            <p>Vanadium Solutions collaborates with a select group of discerning clients, ensuring unparalleled quality, personalized attention, and utmost discretion. Our commitment is to forge lasting partnerships built on trust and exceptional results.</p>
+            <p>Membership grants access to our full suite of bespoke AI services, including:</p>
+            <ul><li>Confidential discovery consultation and strategic AI roadmap development.</li><li>Artisanal design and deployment of your custom, private AI ecosystem.</li><li>Continuous system optimization, proactive maintenance, and feature enrichment.</li><li>Priority 24/7 direct line to your dedicated Vanadium engineering and support team.</li><li>Regular in-person strategic reviews and future capability planning sessions.</li><li>Ironclad confidentiality and non-disclosure assurance.</li></ul>
+            <p>Membership is offered on a tailored basis. We invite you to initiate a conversation to explore how Vanadium can serve your unique requirements.</p>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="main-section contact-form-container">
+        <div class="container">
+          <div class="content-window">
+            <h2><span class="section-icon"><i class="fas fa-envelope-open-text"></i></span>Initiate Contact</h2>
+            <p>Access to Vanadium Solutions is typically by referral or direct invitation. To inquire about our services or present a referral, please utilize the secure form below. We will be in touch discreetly.</p>
+            <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="5b7c8a39-6841-48ee-a123-0021400dab75"> 
+              <div class="form-group"><label for="name" class="sr-only">Your Name</label><input type="text" id="name" name="name" required placeholder="Your Name" autocomplete="name"></div>
+              <div class="form-group"><label for="email" class="sr-only">Your Email</label><input type="email" id="email" name="email" required placeholder="Your Email" autocomplete="email"></div>
+              <div class="form-group"><label for="referral" class="sr-only">Referral Code/Source (Optional)</label><input type="text" id="referral" name="referral" placeholder="Referral Code/Source (Optional)" autocomplete="off"></div>
+              <div class="form-group"><label for="message" class="sr-only">How can we help you?</label><textarea id="message" name="message" rows="5" required placeholder="Briefly outline your interest or requirements..." autocomplete="off"></textarea></div>
+              <div class="form-actions"><button type="submit" class="btn btn-gold"><span class="button-text">Send Secure Message</span><span class="button-spinner" style="display: none;">Sending...</span></button></div>
+              <div id="formStatus" class="form-status" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="container">
+      <p>© <span id="currentYear"></span> Vanadium Solutions. All Rights Reserved.</p>
+      <p>Crafting the Future of Private Artificial Intelligence.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
