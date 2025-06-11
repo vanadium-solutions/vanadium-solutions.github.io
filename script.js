@@ -1,5 +1,173 @@
 // script.js
 
+<<<<<<< HEAD
+// Component Inclusion
+document.addEventListener('DOMContentLoaded', async function() {
+  const mainContent = document.querySelector('.main-sections-wrapper');
+  if (!mainContent) return;
+
+  // Include header
+  const headerResponse = await fetch('/components/header.html');
+  const headerText = await headerResponse.text();
+  mainContent.insertAdjacentHTML('beforebegin', headerText);
+
+  // Include footer
+  const footerResponse = await fetch('/components/footer.html');
+  const footerText = await footerResponse.text();
+  mainContent.insertAdjacentHTML('afterend', footerText);
+
+  // Mark current page as active in navigation
+  const currentPath = window.location.pathname || '/index.html';
+  document.querySelectorAll('.main-nav a').forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// Showcase Carousel Logic
+function ensureShowcaseActiveOnSectionLoad() {
+  const showcaseSection = document.getElementById('showcase');
+  if (!showcaseSection || !showcaseSection.classList.contains('active')) return;
+
+  let activeBtn = showcaseSection.querySelector('.carousel-categories .category-btn.active');
+  if (!activeBtn) {
+    const firstBtn = showcaseSection.querySelector('.carousel-categories .category-btn');
+    if (firstBtn) {
+      showcaseSection.querySelectorAll('.carousel-categories .category-btn').forEach(b => b.classList.remove('active'));
+      firstBtn.classList.add('active');
+      activeBtn = firstBtn;
+    }
+  }
+  
+  const categoryToShow = activeBtn ? activeBtn.dataset.category : 'communication';
+  showCategory(categoryToShow);
+}
+
+function showCategory(category) {
+  const showcaseSection = document.getElementById('showcase');
+  if (!showcaseSection) return;
+
+  // Hide all cards first
+  showcaseSection.querySelectorAll('.carousel-card').forEach(card => {
+    card.classList.remove('active');
+  });
+  
+  // Show the selected category's card
+  const targetCard = showcaseSection.querySelector(`.carousel-card[data-category="${category}"]`);
+  if (targetCard) {
+    targetCard.classList.add('active');
+  }
+
+  // Update button active states
+  showcaseSection.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.category === category);
+  });
+}
+
+// Main Section Navigation with Dynamic Loading
+(function () {
+  const navLinks = Array.from(document.querySelectorAll('.main-nav a'));
+  let currentActiveSection = null;
+  
+  // Function to load external page content
+  async function loadExternalContent(href) {
+    try {
+      const response = await fetch(href);
+      const html = await response.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      return doc.querySelector('.main-section');
+    } catch (error) {
+      console.error('Error loading content:', error);
+      return null;
+    }
+  }
+  
+  // Function to show section
+  async function showSection(targetSection, href) {
+    if (!targetSection && !href) return;
+    
+    // If we need to load external content
+    if (href && !href.startsWith('#')) {
+      const loadedSection = await loadExternalContent(href);
+      if (loadedSection) {
+        // Replace existing section or add new one
+        const mainSections = document.querySelector('.main-sections');
+        const existingSection = document.getElementById(loadedSection.id);
+        if (existingSection) {
+          mainSections.replaceChild(loadedSection, existingSection);
+        } else {
+          mainSections.appendChild(loadedSection);
+        }
+        targetSection = loadedSection;
+      }
+    }
+    
+    if (!targetSection) return;
+    
+    // Hide current active section if it exists
+    if (currentActiveSection && currentActiveSection !== targetSection) {
+      currentActiveSection.classList.remove('active');
+    }
+    
+    // Show new section
+    targetSection.classList.add('active');
+    currentActiveSection = targetSection;
+    
+    // Update active state in navigation
+    navLinks.forEach(link => {
+      const isActive = (link.getAttribute('href') === href) || 
+                      (link.getAttribute('href') === '#' + targetSection.id);
+      link.classList.toggle('active', isActive);
+    });
+    
+    // If this is the showcase section, ensure carousel is initialized
+    if (targetSection.id === 'showcase') {
+      ensureShowcaseActiveOnSectionLoad();
+    }
+  }
+
+  // Handle navigation clicks
+  navLinks.forEach((link) => {
+    link.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const href = link.getAttribute('href');
+      
+      // If it's a hash link, find the section in current page
+      if (href.startsWith('#')) {
+        const targetSection = document.querySelector(href);
+        await showSection(targetSection, href);
+      } else {
+        // Load external content
+        await showSection(null, href);
+      }
+    });
+  });
+  
+  // Show initial section
+  document.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) {
+      const targetSection = document.querySelector(hash);
+      showSection(targetSection, hash);
+    } else {
+      const firstSection = document.querySelector('.main-section');
+      if (firstSection) {
+        showSection(firstSection, '#' + firstSection.id);
+      }
+    }
+  });
+
+  // Handle showcase category clicks
+  document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.category-btn');
+    if (btn && btn.dataset.category) {
+      showCategory(btn.dataset.category);
+    }
+  });
+})();
+=======
 // Showcase Carousel Logic (Category Filter)
 (function() {
     function showCategory(category) {
@@ -178,3 +346,4 @@
       });
     }
   })();
+>>>>>>> 5a103012af94e0e84f47d097a0c8f3532eb352ae
