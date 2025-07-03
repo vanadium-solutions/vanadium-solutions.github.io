@@ -1,269 +1,29 @@
+<!--
+  This file dynamically loads partials for easier editing.
+  Each section is loaded at runtime using JavaScript and the data-content attribute.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-  <meta name="description" content="Vanadium Solutions - Bespoke AI Agents for Discerning Clients" />
-  <title>Vanadium Solutions - Bespoke AI Agents</title>
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanadium Solutions — Privacy is Freedom</title>
+  <meta name="description" content="Self-hosted AI solutions for privacy-focused businesses. Privacy is freedom.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <script defer src="main.js"></script>
 </head>
 <body>
-
-  <!-- Header and Navigation will be loaded dynamically -->
-
-  <div class="main-sections-wrapper">
-    <div class="main-sections">
-      <section id="vanadium" class="main-section active"> <!-- JS will add .active -->
-        <div class="container">
-          <div class="content-window">
-            <h2><span class="section-icon"><i class="fas fa-gem"></i></span>Vanadium: The Essence of Private AI</h2>
-            <img src="image01.png" alt="Privacy, always!" class="content-image float-right">
-            <p><b>Vanadium Solutions</b> crafts bespoke artificial intelligence systems that operate exclusively within your domain.</p>
-            <p>We deliver not just AI, but digital sovereignty – powerful, intuitive, and entirely yours. Our AI agents are meticulously engineered to integrate seamlessly into your world, automating complexities, amplifying capabilities, and safeguarding your digital autonomy.</p>
-            <br>
-            
-            <ul>
-              <li>A Personal AI confidant, strategist, and 24/7 assistant you can trust implicitly.</li>
-              <li>Automated operational command for your ventures, estate, and complex logistics.</li>
-              <li>An extension of your intellect, secured with uncompromising, on-premise privacy.</li>
-              <li>Custom AI system architecture, development, and white-glove deployment.</li>
-              <li>Proactive system maintenance, evolution, and dedicated engineering support.</li>
-              <li>Designed for those who value discretion as much as performance.</li>
-            </ul>
-            <p>Experience the confluence of ultimate control and intelligent automation. This is AI, redefined for you.</p>
-          <br>
-            <h2><strong>Zero Trust. Full Ownership.</strong></h2>
-            <ul class="security-features">
-              <li><strong>Hosted on our hardware, in your name</strong></li>
-              <li><strong>No third-party cloud providers involved</strong></li>
-              <li><strong>Military-grade encryption</strong></li>
-              <li><strong>No backdoors. Not even we can see your data</strong></li>
-            </ul>
-            
-            <p class="trust-quote"><em>Trust is Good - No Trust is Better.</em></p>
-
-          </div>
-          
-        </div>
-      </section>
-
-      <section id="ai-agents" class="main-section">
-        <div class="container">
-          <div class="content-window">
-            <h2><span class="section-icon"><i class="fas fa-brain"></i></span>Reclaim Your Most Precious Asset: Time</h2>
-            <img src="image.png" alt="Time reclaimed through AI automation" class="content-image float-right">
-            <p>In a world of ceaseless demands, the ultimate luxury isn't material – it's <strong class="highlight-gold">time</strong>. Imagine an intelligence devoted entirely to you, a silent partner anticipating needs, streamlining complexities, and executing mundane tasks with flawless precision, 24/7. This is the promise of Vanadium AI Agents.</p>
-            <p>Our bespoke AI-driven automations are more than just sophisticated software; they are an extension of your will, designed to liberate you from the operational drag that dilutes focus and consumes your most valuable resource. From orchestrating intricate global schedules to managing vast information flows and safeguarding your digital footprint, our agents work tirelessly in the background, granting you the freedom to dedicate your energy to what truly matters: strategic vision, personal passions, and irreplaceable moments.</p>
-            <p>This isn't just about efficiency; it's about enhancing the very fabric of your life. It's about regaining control, achieving a new level of clarity, and unlocking capacities you never thought possible. <span class="text-emphasis">Welcome to a life amplified by intelligent automation, secured by Vanadium.</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section id="privacy" class="main-section">
-        <div class="container">
-          <div class="content-window">
-            <h2><span class="section-icon"><i class="fas fa-user-secret"></i></span>Digital Sovereignty: Your Data, Your Domain</h2>
-            <img src="image03.png" alt="Privacy is freedom" class="content-image float-right">
-            <p>In the digital age, privacy isn't just a feature – it's the foundation of true autonomy. At Vanadium Solutions, we understand that your data is more than information; it's the essence of your strategic advantage, your personal life, and your legacy.</p>
-            <p>Our commitment to digital sovereignty is absolute and uncompromising:</p>
-            <ul>
-              <li>Your AI agents operate exclusively within your infrastructure</li>
-              <li>Zero data sharing with external servers or cloud services</li>
-              <li>Complete ownership and control of your AI's learning and evolution</li>
-              <li>Military-grade encryption for all data at rest and in transit</li>
-              <li>Regular security audits and penetration testing</li>
-            </ul>
-            <p>With Vanadium, you're not just getting AI capabilities; you're securing your digital sovereignty. Your data remains exactly where it belongs – under your exclusive control.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="showcase" class="main-section">
-        <div class="container">
-          <div class="content-window">
-            <h2><span class="section-icon"><i class="fas fa-microchip"></i></span>Illustrative Capabilities</h2>
-            <p>Discover a glimpse of the potential Vanadium Solutions can unlock for you. These are but a few examples of how our bespoke AI agents can automate, optimize, and enhance your endeavors:</p>
-            <div class="showcase-carousel-container">
-              <div class="carousel-categories">
-                <button class="category-btn btn btn-subtle active" data-category="communication">
-                  <i class="fas fa-headset"></i> Communication
-                </button>
-                <button class="category-btn btn btn-subtle" data-category="business">
-                  <i class="fas fa-chart-line"></i> Business
-                </button>
-                <button class="category-btn btn btn-subtle" data-category="lifestyle-enhancement">
-                  <i class="fas fa-gem"></i> Lifestyle Enhancement
-                </button>
-                <button class="category-btn btn btn-subtle" data-category="personal-optimization">
-                  <i class="fas fa-heart-pulse"></i> Personal Optimization
-                </button>
-                <button class="category-btn btn btn-subtle" data-category="military">
-                  <i class="fas fa-shield-alt"></i> Military
-                </button>
-                <button class="category-btn btn btn-subtle" data-category="pharma">
-                  <i class="fas fa-dna"></i> Pharma
-                </button>
-                <button class="category-btn btn btn-subtle" data-category="crypto">
-                  <i class="fas fa-coins"></i> Crypto
-                </button>
-                <button class="category-btn btn btn-subtle" data-category="executive">
-                  <i class="fas fa-chess-king"></i> Executive
-                </button>
-              </div>
-              <div class="carousel-cards">
-                <div class="carousel-card active" data-category="communication">
-                  <div class="card-header"><i class="fas fa-envelope"></i> Communication Nexus</div>
-                  <ul>
-                    <li>AI-powered executive secretary for daily inbox intelligence and summarization.</li>
-                    <li>Autonomous calendar orchestration and secure meeting facilitation.</li>
-                    <li>Intelligent email prioritization, drafting, and sentiment analysis.</li>
-                    <li>Encrypted voice-activated chatbots for private team operations and commands.</li>
-                  </ul>
-                </div>
-                <div class="carousel-card" data-category="business">
-                  <div class="card-header"><i class="fas fa-chart-pie"></i> Business Intelligence</div>
-                  <ul>
-                    <li>Real-time market analysis and competitive intelligence.</li>
-                    <li>Automated financial reporting and risk assessment.</li>
-                    <li>Smart contract analysis and legal document processing.</li>
-                    <li>Supply chain optimization and vendor management.</li>
-                  </ul>
-                </div>
-                <div class="carousel-card" data-category="lifestyle-enhancement">
-                  <div class="card-header"><i class="fas fa-gem"></i> Lifestyle Enhancement</div>
-                  <ul>
-                    <li>AI Butler for intelligent estate operations and staff coordination.</li>
-                    <li>Global travel planning and logistics optimization.</li>
-                    <li>Asset management and maintenance automation.</li>
-                  </ul>
-                </div>
-                <div class="carousel-card" data-category="personal-optimization">
-                  <div class="card-header"><i class="fas fa-heart-pulse"></i> Personal Optimization</div>
-                  <ul>
-                    <li>Personal health and wellness tracking.</li>
-                    <li>Continuous health and biofeedback monitoring with personalized insights and reports.</li>
-                    <li>Bespoke luxury travel, logistics, and experience concierge AI.</li>
-                    <li>AI-crafted nutrition, fitness, and wellness regimens tailored to your unique profile.</li>
-                    <li>Private media library curation, discovery, and personalized recommendations.</li>
-                  </ul>
-                </div>
-                <div class="carousel-card" data-category="military">
-                  <div class="card-header"><i class="fas fa-shield-alt"></i> Mission Critical Command AI</div>
-                  <ul><li>Secure, air-gapped field operations communications assistant.</li><li>Real-time global threat feed aggregator, correlator, and analyzer.</li><li>Automated AI briefing generator for sensitive intelligence.</li><li>Autonomous counter- UAS/drone monitoring and alert dashboard.</li><li>24/7 tactical decision support and predictive modeling aid.</li></ul>
-                </div>
-                <div class="carousel-card" data-category="pharma">
-                  <div class="card-header"><i class="fas fa-dna"></i> BioPharma Advancement AI</div>
-                  <ul><li>Proactive regulatory compliance sentinel and documentation auditor.</li><li>Automated clinical trial monitoring and anomaly detection system.</li><li>Secure, proprietary LLM for confidential drug discovery and research chat.</li><li>Longitudinal patient voice diary analysis for nuanced outcome tracking.</li><li>Preclinical risk analysis and mitigation copilot.</li></ul>
-                </div>
-                <div class="carousel-card" data-category="crypto">
-                  <div class="card-header"><i class="fas fa-coins"></i> Digital Asset & DeFi AI</div>
-                  <ul><li>On-chain intelligence aggregator providing actionable alpha and risk alerts.</li><li>Private, AI-driven portfolio manager with customizable strategies.</li><li>Automated compliance, AML, and regulatory reporting assistant.</li><li>Sophisticated whale wallet movement tracker and market sentiment analyzer.</li><li>Custom tokenomics modeling and DAO governance participation assistant.</li></ul>
-                </div>
-                <div class="carousel-card" data-category="executive">
-                  <div class="card-header"><i class="fas fa-chess-king"></i> Executive & UHNWI Command Center</div>
-                  <ul><li>AI Butler for intelligent estate operations and staff coordination.</li><li>Confidential deal flow analysis and due diligence AI assistant.</li><li>Global family travel, visa, and complex logistics concierge AI.</li><li>Proactive high-risk region monitoring and personal security advisor.</li><li>Automated luxury asset management, maintenance, and watchdog.</li></ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- /* testimonials -->
-
-      <section id="testimonials" class="main-section">
-        <div class="container">
-          <div class="content-window">
-            <h2><span class="section-icon"><i class="fas fa-comments-dollar"></i></span>Discreet Acclaim: Voices of Vanadium</h2>
-            <p class="testimonials-intro">While our clients value utmost privacy, their experiences underscore the transformative power of bespoke AI, securely managed.</p>
-            
-            <div class="testimonial-grid">
-              <div class="testimonial-card">
-                <blockquote>
-                  <p>"Vanadium's AI doesn't just manage my schedule; it anticipates my needs across three continents and a dozen ventures. The time reclaimed is invaluable. And the privacy? Non-negotiable and perfectly delivered."</p>
-                </blockquote>
-                <cite>– A Sovereign Wealth Advisor & UHNWI</cite>
-              </div>
-
-              <div class="testimonial-card">
-                <blockquote>
-                  <p>"My digital life, my family's, my estate's – it's complex. Vanadium built an AI that's not just a tool, but a trusted extension of my own diligence. Knowing my data never leaves my control is paramount."</p>
-                </blockquote>
-                <cite>– Founder, Private Equity & Family Office</cite>
-              </div>
-
-              <div class="testimonial-card">
-                <blockquote>
-                  <p>"In the crypto space, information is alpha, and security is everything. My custom Vanadium agent sifts through terabytes of on-chain data, providing insights no public tool could, all within my air-gapped environment. It's a distinct competitive edge."</p>
-                </blockquote>
-                <cite>– Early Crypto Adopter & DeFi Architect</cite>
-              </div>
-
-              <div class="testimonial-card">
-                <blockquote>
-                  <p>"The level of automation for estate operations and personal logistics is astounding. Mundane tasks that consumed hours are now handled seamlessly. This isn't just convenience; it's a higher quality of life, backed by true digital sovereignty."</p>
-                </blockquote>
-                <cite>– Tech Entrepreneur & Philanthropist</cite>
-              </div>
-
-              <!-- NEW TESTIMONIAL 1 -->
-              <div class="testimonial-card">
-                <blockquote>
-                  <p>"As a collector of unique digital and physical assets, tracking provenance, security, and market shifts is a full-time job. Vanadium's AI acts as my tireless, incorruptible curator and sentinel, providing instant alerts and deep analysis. It's revolutionized how I manage my portfolio."</p>
-                </blockquote>
-                <cite>– Discerning Collector & Art Aficionado</cite>
-              </div>
-
-              <!-- NEW TESTIMONIAL 2 -->
-              <div class="testimonial-card">
-                <blockquote>
-                  <p>"The ability to have a secure, private LLM trained on *my* proprietary research and internal documents has accelerated our biotech R&D significantly. We can ask complex questions and get nuanced answers without any data leaving our secure perimeter. Game-changing."</p>
-                </blockquote>
-                <cite>– Chief Scientific Officer, Boutique Biotech Firm</cite>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-     
-      <section id="membership" class="main-section">
-        <div class="container">
-          <div class="content-window">
-            <h2><span class="section-icon"><i class="fas fa-user-shield"></i></span>Exclusive Membership</h2>
-            <img src="image02.png" alt="Enjoy the exclusive membership" class="content-image float-right">
-            <p>Vanadium Solutions collaborates with a select group of discerning clients, ensuring unparalleled quality, personalized attention, and utmost discretion. Our commitment is to forge lasting partnerships built on trust and exceptional results.</p>
-            <p>Membership grants access to our full suite of bespoke AI services, including:</p>
-            <ul><li>Confidential discovery consultation and strategic AI roadmap development.</li><li>Artisanal design and deployment of your custom, private AI ecosystem.</li><li>Continuous system optimization, proactive maintenance, and feature enrichment.</li><li>Priority 24/7 direct line to your dedicated Vanadium engineering and support team.</li><li>Regular in-person strategic reviews and future capability planning sessions.</li><li>Ironclad confidentiality and non-disclosure assurance.</li></ul>
-            <p>Membership is offered on a tailored basis. We invite you to initiate a conversation to explore how Vanadium can serve your unique requirements.</p>
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="main-section contact-form-container">
-        <div class="container">
-          <div class="content-window">
-            <h2><span class="section-icon"><i class="fas fa-envelope-open-text"></i></span>Initiate Contact</h2>
-            <p>Access to Vanadium Solutions is typically by referral or direct invitation. To inquire about our services or present a referral, please utilize the secure form below. We will be in touch discreetly.</p>
-            <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-              <input type="hidden" name="access_key" value="5b7c8a39-6841-48ee-a123-0021400dab75"> 
-              <div class="form-group"><label for="name" class="sr-only">Your Name</label><input type="text" id="name" name="name" required placeholder="Your Name" autocomplete="name"></div>
-              <div class="form-group"><label for="email" class="sr-only">Your Email</label><input type="email" id="email" name="email" required placeholder="Your Email" autocomplete="email"></div>
-              <div class="form-group"><label for="referral" class="sr-only">Referral Code/Source (Optional)</label><input type="text" id="referral" name="referral" placeholder="Referral Code/Source (Optional)" autocomplete="off"></div>
-              <div class="form-group"><label for="message" class="sr-only">How can we help you?</label><textarea id="message" name="message" rows="5" required placeholder="Briefly outline your interest or requirements..." autocomplete="off"></textarea></div>
-              <div class="form-actions"><button type="submit" class="btn btn-gold"><span class="button-text">Send Secure Message</span><span class="button-spinner" style="display: none;">Sending...</span></button></div>
-              <div id="formStatus" class="form-status" role="alert"></div>
-            </form>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <!-- Footer will be loaded dynamically -->
-  <script src="script.js"></script>
+  <div id="navbar" data-content="partials/navbar.html"></div>
+  <section id="hero" data-content="partials/hero.html"></section>
+  <!-- <section id="trust" data-content="partials/trust.html"></section> -->
+  <section id="problem-solution" data-content="partials/problem-solution.html"></section>
+  <section id="products" data-content="partials/products.html"></section>
+  <section id="how-it-works" data-content="partials/how-it-works.html"></section>
+  <!-- <section id="cta-section" data-content="partials/cta-section.html"></section> -->
+  <section id="about-contact" data-content="partials/about-contact.html"></section>
+  <div id="footer" data-content="partials/footer.html"></div>
 </body>
 </html>
