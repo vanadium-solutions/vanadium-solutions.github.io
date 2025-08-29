@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   for (const el of containers) {
     const url = el.getAttribute('data-content');
     try {
-      const resp = await fetch(url);
+      const resp = await fetch(url, { cache: 'no-store' });
       el.innerHTML = await resp.text();
     } catch (e) {
       el.innerHTML = '<p>Could not load section.</p>';
@@ -30,16 +30,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // --- Animate hero word ---
   const heroWords = [
-    "freedom.",
-    "control.",
-    "security.",
-    "compliance.",
-    "trust.",
-    "power.",
-    "independence.",
-    "confidence.",
-    "resilience.",
-    "ownership."
+    "freedom",
+    "control",
+    "security",
+    "compliance",
+    "trust",
+    "power",
+    "independence",
+    "confidence",
+    "resilience",
+    "ownership"
   ];
   const animatedWord = document.getElementById("animated-hero-word");
   let heroWordIdx = 0;
@@ -102,25 +102,3 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
-// Smooth scroll for nav links
-const navLinks = document.querySelectorAll('nav a, .hero-ctas a, .cta-section a');
-navLinks.forEach(link => {
-  link.addEventListener('click', function(e) {
-    if (this.hash && document.querySelector(this.hash)) {
-      e.preventDefault();
-      document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Contact form placeholder submit
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thank you! We will contact you soon. (Form is placeholder)');
-    contactForm.reset();
-  });
-}
-console.log("Loaded partial:", url);
-console.log("Loaded partial:", url);
